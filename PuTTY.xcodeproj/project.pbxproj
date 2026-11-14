@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		017CC6F86454321D6D579F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EC7CAE7D0D0D827FDEDBF /* AppDelegate.swift */; };
+		0F8A2500241AE16507903DA0 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC83204A47AAAD9D05CCAB5 /* SettingsStore.swift */; };
+		3E819CF3C52789648DF910E0 /* RloginBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40670F8CC15FB8003D12886 /* RloginBackend.swift */; };
+		447DE4F0F68D67F517D07EBF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196C54B1BFF87C82479D22A /* main.swift */; };
+		494BA5B53236CE7949FC912E /* TerminalEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5CBC14C707DA94309954D /* TerminalEmulator.swift */; };
+		4ADB00CBFC9A3B553976ABBE /* PTYSpawn.c in Sources */ = {isa = PBXBuildFile; fileRef = 7EA1B3BA3C6A45AFB5ADBC8A /* PTYSpawn.c */; };
+		4C07637B0BEED8A6E13F225E /* TelnetBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC79A33556EF7D9839EACFD /* TelnetBackend.swift */; };
+		582051C3944828C800A31EFD /* SSHBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818308EF5C5B57234CBEB40 /* SSHBackend.swift */; };
+		5A0C118233BB2BA982DAE1B7 /* TerminalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C99B78A804B1FB08A2149 /* TerminalWindowController.swift */; };
+		72DE9CD878510DD3657A4891 /* TerminalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5469E7D4D857A9F0F86E7 /* TerminalColors.swift */; };
+		7D1DBA83F5517888388F38D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4520D96AC0EDB42E750BB2B /* Assets.xcassets */; };
+		7ECE58E126E15A22271C16F2 /* ConfigWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370A6862392D9D7304C4532D /* ConfigWindowController.swift */; };
+		A5AF60D80FA3E3B9E36422CA /* TCPBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC61515B876F24D43D729F1 /* TCPBackend.swift */; };
+		A640C22F55B1DE65BDDC44A9 /* Ldisc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3646D7A9D601215262F0C1D /* Ldisc.swift */; };
+		B9BF39F522DC2C9B38AEDC25 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC91A0BADD5C85D65F5A51 /* Protocols.swift */; };
+		D15583C21AB81D81F9A385C7 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53400056D6AF4D32CE3811F9 /* TerminalView.swift */; };
+		E45D29B5C1195EAD3B99B0A5 /* SerialBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0EE35A8E6E38D88BB12255 /* SerialBackend.swift */; };
+		E865CE24C0B5C94B05D545E3 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD199FF69EC147B23EFEBBC /* Keyboard.swift */; };
+		EC49EC5A3D47D7ADBB5E8E3C /* Conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2C827C5039528314750E6 /* Conf.swift */; };
+		F008E48C4EFD55D7066026A9 /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A65DEF5CF1B138DDFB9409D /* ConfigModel.swift */; };
+		FC2246E30CDC79662960944F /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72323A21F058D23EE6D7441 /* Backend.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1196C54B1BFF87C82479D22A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		12F1C9823B7D241C34392D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BC91A0BADD5C85D65F5A51 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		2FC83204A47AAAD9D05CCAB5 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		370A6862392D9D7304C4532D /* ConfigWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigWindowController.swift; sourceTree = "<group>"; };
+		4089FE12867D6B0007365092 /* PTYSpawn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTYSpawn.h; sourceTree = "<group>"; };
+		4C0C99B78A804B1FB08A2149 /* TerminalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalWindowController.swift; sourceTree = "<group>"; };
+		53400056D6AF4D32CE3811F9 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		5A65DEF5CF1B138DDFB9409D /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
+		783EC7CAE7D0D0D827FDEDBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EA1B3BA3C6A45AFB5ADBC8A /* PTYSpawn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PTYSpawn.c; sourceTree = "<group>"; };
+		844ED587F4D594A2CA46AC0A /* PuTTY-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PuTTY-Bridging-Header.h"; sourceTree = "<group>"; };
+		95C5469E7D4D857A9F0F86E7 /* TerminalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalColors.swift; sourceTree = "<group>"; };
+		9F0EE35A8E6E38D88BB12255 /* SerialBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialBackend.swift; sourceTree = "<group>"; };
+		ABC61515B876F24D43D729F1 /* TCPBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPBackend.swift; sourceTree = "<group>"; };
+		ADC79A33556EF7D9839EACFD /* TelnetBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelnetBackend.swift; sourceTree = "<group>"; };
+		C40670F8CC15FB8003D12886 /* RloginBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RloginBackend.swift; sourceTree = "<group>"; };
+		C72323A21F058D23EE6D7441 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		D3646D7A9D601215262F0C1D /* Ldisc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ldisc.swift; sourceTree = "<group>"; };
+		D8E2C827C5039528314750E6 /* Conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conf.swift; sourceTree = "<group>"; };
+		E818308EF5C5B57234CBEB40 /* SSHBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHBackend.swift; sourceTree = "<group>"; };
+		EDD199FF69EC147B23EFEBBC /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		F396DD377D7607603D6B67FE /* PuTTY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuTTY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4520D96AC0EDB42E750BB2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDD5CBC14C707DA94309954D /* TerminalEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalEmulator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		424153ED3CD079DB4DB459AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46ED3C36BFDE2223ADDD66EB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				783EC7CAE7D0D0D827FDEDBF /* AppDelegate.swift */,
+				1196C54B1BFF87C82479D22A /* main.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		518DA81DB9B99529C0C0AEBE /* PuTTY */ = {
+			isa = PBXGroup;
+			children = (
+				46ED3C36BFDE2223ADDD66EB /* App */,
+				776F9224D25444DA4C83D88F /* Backends */,
+				73B6C4B1FDB8FFB8ED86F2AD /* Config */,
+				C7D0489209D03463A63A51AC /* Model */,
+				F87CE5FAAB223CD5A6761C86 /* Terminal */,
+				F4520D96AC0EDB42E750BB2B /* Assets.xcassets */,
+				12F1C9823B7D241C34392D7F /* Info.plist */,
+				844ED587F4D594A2CA46AC0A /* PuTTY-Bridging-Header.h */,
+				547D009064F7C3F13BEF3460 /* Products */,
+			);
+			path = PuTTY;
+			sourceTree = "<group>";
+		};
+		547D009064F7C3F13BEF3460 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F396DD377D7607603D6B67FE /* PuTTY.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73B6C4B1FDB8FFB8ED86F2AD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5A65DEF5CF1B138DDFB9409D /* ConfigModel.swift */,
+				370A6862392D9D7304C4532D /* ConfigWindowController.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		776F9224D25444DA4C83D88F /* Backends */ = {
+			isa = PBXGroup;
+			children = (
+				C72323A21F058D23EE6D7441 /* Backend.swift */,
+				D3646D7A9D601215262F0C1D /* Ldisc.swift */,
+				7EA1B3BA3C6A45AFB5ADBC8A /* PTYSpawn.c */,
+				4089FE12867D6B0007365092 /* PTYSpawn.h */,
+				C40670F8CC15FB8003D12886 /* RloginBackend.swift */,
+				E818308EF5C5B57234CBEB40 /* SSHBackend.swift */,
+				9F0EE35A8E6E38D88BB12255 /* SerialBackend.swift */,
+				ABC61515B876F24D43D729F1 /* TCPBackend.swift */,
+				ADC79A33556EF7D9839EACFD /* TelnetBackend.swift */,
+			);
+			path = Backends;
+			sourceTree = "<group>";
+		};
+		C7D0489209D03463A63A51AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8E2C827C5039528314750E6 /* Conf.swift */,
+				17BC91A0BADD5C85D65F5A51 /* Protocols.swift */,
+				2FC83204A47AAAD9D05CCAB5 /* SettingsStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F87CE5FAAB223CD5A6761C86 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				EDD199FF69EC147B23EFEBBC /* Keyboard.swift */,
+				95C5469E7D4D857A9F0F86E7 /* TerminalColors.swift */,
+				FDD5CBC14C707DA94309954D /* TerminalEmulator.swift */,
+				53400056D6AF4D32CE3811F9 /* TerminalView.swift */,
+				4C0C99B78A804B1FB08A2149 /* TerminalWindowController.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7C85163869D1B94781FB782 /* PuTTY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F62AAE534BA46EC59716F3 /* Build configuration list for PBXNativeTarget "PuTTY" */;
+			buildPhases = (
+				7A70D71C385290AF96BF1031 /* Sources */,
+				424153ED3CD079DB4DB459AF /* Frameworks */,
+				285BB1C1430063331E9F5DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuTTY;
+			productName = PuTTY;
+			productReference = F396DD377D7607603D6B67FE /* PuTTY.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2720;
+				TargetAttributes = {
+					F7C85163869D1B94781FB782 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 7EF2517A8FE63F4681EC5EEA /* Build configuration list for PBXProject "PuTTY" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 518DA81DB9B99529C0C0AEBE /* PuTTY */;
+			productRefGroup = 547D009064F7C3F13BEF3460 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7C85163869D1B94781FB782 /* PuTTY */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		285BB1C1430063331E9F5DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1DBA83F5517888388F38D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A70D71C385290AF96BF1031 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				017CC6F86454321D6D579F43 /* AppDelegate.swift in Sources */,
+				447DE4F0F68D67F517D07EBF /* main.swift in Sources */,
+				F008E48C4EFD55D7066026A9 /* ConfigModel.swift in Sources */,
+				7ECE58E126E15A22271C16F2 /* ConfigWindowController.swift in Sources */,
+				FC2246E30CDC79662960944F /* Backend.swift in Sources */,
+				A640C22F55B1DE65BDDC44A9 /* Ldisc.swift in Sources */,
+				3E819CF3C52789648DF910E0 /* RloginBackend.swift in Sources */,
+				582051C3944828C800A31EFD /* SSHBackend.swift in Sources */,
+				E45D29B5C1195EAD3B99B0A5 /* SerialBackend.swift in Sources */,
+				A5AF60D80FA3E3B9E36422CA /* TCPBackend.swift in Sources */,
+				4C07637B0BEED8A6E13F225E /* TelnetBackend.swift in Sources */,
+				E865CE24C0B5C94B05D545E3 /* Keyboard.swift in Sources */,
+				72DE9CD878510DD3657A4891 /* TerminalColors.swift in Sources */,
+				494BA5B53236CE7949FC912E /* TerminalEmulator.swift in Sources */,
+				D15583C21AB81D81F9A385C7 /* TerminalView.swift in Sources */,
+				5A0C118233BB2BA982DAE1B7 /* TerminalWindowController.swift in Sources */,
+				EC49EC5A3D47D7ADBB5E8E3C /* Conf.swift in Sources */,
+				B9BF39F522DC2C9B38AEDC25 /* Protocols.swift in Sources */,
+				0F8A2500241AE16507903DA0 /* SettingsStore.swift in Sources */,
+				4ADB00CBFC9A3B553976ABBE /* PTYSpawn.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		256639833029BCA847F093AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = CJNSZ8G94M;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PuTTY/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kiwidreamer.putty.swift;
+				PRODUCT_NAME = PuTTY;
+				SWIFT_OBJC_BRIDGING_HEADER = "PuTTY/PuTTY-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		331C5106741EE8E14B752D88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = CJNSZ8G94M;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PuTTY/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kiwidreamer.putty.swift;
+				PRODUCT_NAME = PuTTY;
+				SWIFT_OBJC_BRIDGING_HEADER = "PuTTY/PuTTY-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		37CDDD61FED8A39EEA88C0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCFB30EAE59D6917CE906371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EF2517A8FE63F4681EC5EEA /* Build configuration list for PBXProject "PuTTY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFB30EAE59D6917CE906371 /* Debug */,
+				37CDDD61FED8A39EEA88C0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F62AAE534BA46EC59716F3 /* Build configuration list for PBXNativeTarget "PuTTY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331C5106741EE8E14B752D88 /* Debug */,
+				256639833029BCA847F093AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
