@@ -3,11 +3,18 @@ import AppKit
 /// PuTTY's configuration box: a category tree on the left, the selected
 /// panel on the right, the host/port/protocol row and saved-session controls
 /// on the Session panel, and Open/Cancel (or Apply/Cancel mid-session) below.
-final class ConfigWindowController: NSWindowController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSTextFieldDelegate {
+final class ConfigWindowController: NSWindowController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSTextFieldDelegate, NSWindowDelegate {
 
     private let conf: Conf
     private let midSession: Bool
     private var onOpen: ((Conf) -> Void)?
+
+    /// Open configuration boxes, kept alive while on screen.  The boxes are
+    /// ordinary windows (or sheets mid-session), never an app-wide modal loop,
+    /// so the app can always quit.
+    private static var live: [ConfigWindowController] = []
+    /// The terminal window a mid-session box is attached to as a sheet.
+    private weak var sheetParent: NSWindow?
 
     private var panels: [Panel] = []
     private var tree: [TreeNode] = []
@@ -37,27 +44,67 @@ final class ConfigWindowController: NSWindowController, NSOutlineViewDataSource,
                               styleMask: [.titled, .closable], backing: .buffered, defer: false)
         window.title = midSession ? "PuTTY Reconfiguration" : "PuTTY Configuration"
         super.init(window: window)
+        window.delegate = self
+        window.isReleasedWhenClosed = false
         buildUI()
         rebuildPanels()
         selectPath("Session")
     }
     required init?(coder: NSCoder) { fatalError() }
 
+    /// Show a new configuration box as a normal window (non-blocking).
     static func presentNew() {
         let conf = SettingsStore.shared.load("Default Settings") ?? Conf()
         let c = ConfigWindowController(conf: conf, midSession: false) { finalConf in
             let session = TerminalWindowController(conf: finalConf)
             session.startSession()
         }
-        NSApp.runModal(for: c.window!)
+        live.append(c)
+        c.window?.center()
+        c.showWindow(nil)
+        c.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
 
-    static func presentMidSession(conf: Conf, onApply: @escaping (Conf) -> Void) {
+    /// "Change Settings…": shown as a sheet on the session's own window.
+    static func presentMidSession(conf: Conf, parent: NSWindow?, onApply: @escaping (Conf) -> Void) {
         let working = conf.copy()
         let c = ConfigWindowController(conf: working, midSession: true) { finalConf in
             onApply(finalConf)
         }
-        NSApp.runModal(for: c.window!)
+        live.append(c)
+        if let parent = parent, let sheet = c.window {
+            c.sheetParent = parent
+            parent.beginSheet(sheet) { _ in }
+        } else {
+            c.window?.center()
+            c.showWindow(nil)
+        }
+    }
+
+    /// Dismiss this box whether it is a sheet or a free-standing window.
+    private func dismiss() {
+        guard let w = window else { return }
+        if let parent = sheetParent {
+            parent.endSheet(w)
+            w.orderOut(nil)
+            finishClosing()
+        } else {
+            w.close()   // windowWillClose does the bookkeeping
+        }
+    }
+
+    private func finishClosing() {
+        if NSFontManager.shared.target === self {
+            NSFontManager.shared.target = nil
+            NSFontPanel.shared.orderOut(nil)
+        }
+        onOpen = nil
+        Self.live.removeAll { $0 === self }
+    }
+
+    func windowWillClose(_ notification: Notification) {
+        finishClosing()
     }
 
     // MARK: UI skeleton
@@ -427,8 +474,8 @@ final class ConfigWindowController: NSWindowController, NSOutlineViewDataSource,
             let c = NSTableColumn(identifier: NSUserInterfaceItemIdentifier("s"))
             c.width = width - 130
             table.addTableColumn(c); table.headerView = nil
-            table.dataSource = self as? NSTableViewDataSource
-            table.delegate = self as? NSTableViewDelegate
+            table.dataSource = self
+            table.delegate = self
             table.target = self; table.doubleAction = #selector(loadDoubleClicked)
             listScroll.documentView = table
             box.contentView?.addSubview(listScroll); sessionList = table
@@ -606,12 +653,31 @@ final class ConfigWindowController: NSWindowController, NSOutlineViewDataSource,
     }
 
     @objc private func openPressed() {
-        onOpen?(conf)
-        close()
+        window?.makeFirstResponder(nil)   // commit any in-progress edit
+        // Start the session before this box goes away, so there is never a
+        // moment with no windows open.
+        let action = onOpen
+        onOpen = nil
+        action?(conf)
+        dismiss()
     }
 
     @objc private func cancelPressed() {
-        close()
+        onOpen = nil
+        dismiss()
+    }
+}
+
+// Saved-session list.
+extension ConfigWindowController: NSTableViewDataSource, NSTableViewDelegate {
+    func numberOfRows(in tableView: NSTableView) -> Int { sessionNames.count }
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let id = NSUserInterfaceItemIdentifier("s")
+        let tf = (tableView.makeView(withIdentifier: id, owner: self) as? NSTextField) ?? {
+            let t = NSTextField(labelWithString: ""); t.identifier = id; return t
+        }()
+        tf.stringValue = sessionNames[row]
+        return tf
     }
 }
 

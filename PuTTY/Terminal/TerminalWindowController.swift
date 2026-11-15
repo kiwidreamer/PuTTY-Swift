@@ -56,7 +56,6 @@ final class TerminalWindowController: NSWindowController,
         let t = conf.getStr(K.wintitle)
         if !t.isEmpty { return t }
         let host = conf.getStr(K.host)
-        let proto = conf.protocolValue.displayName
         if conf.protocolValue == .serial { return "\(conf.getStr(K.serline)) - PuTTY" }
         return host.isEmpty ? "PuTTY" : "\(host) - PuTTY"
     }
@@ -163,7 +162,7 @@ final class TerminalWindowController: NSWindowController,
         c.startSession()
     }
     @objc private func changeSettings() {
-        ConfigWindowController.presentMidSession(conf: conf) { [weak self] newConf in
+        ConfigWindowController.presentMidSession(conf: conf, parent: window) { [weak self] newConf in
             guard let self = self else { return }
             // Apply the live-reconfigurable bits.
             self.conf.merge(from: newConf)
@@ -194,6 +193,12 @@ final class TerminalWindowController: NSWindowController,
         backend.close()
         Self.openControllers.removeAll { $0 === self }
     }
+
+    /// True while the connection is up (used to warn before quitting).
+    var isSessionActive: Bool { connected && !closedCleanly }
+
+    /// Shut the connection down without asking (used when the app quits).
+    func shutDown() { backend.close() }
 
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if connected && !closedCleanly && conf.getBool(K.warnOnClose) {

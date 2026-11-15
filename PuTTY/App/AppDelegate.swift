@@ -12,6 +12,34 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         false
     }
 
+    /// Clicking the Dock icon with no windows open brings the settings box back.
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag { showConfig() }
+        return true
+    }
+
+    /// Ask once before quitting while sessions are still connected (PuTTY's
+    /// "Warn before closing window"), instead of one prompt per window.
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        let active = TerminalWindowController.openControllers.filter {
+            $0.isSessionActive && $0.conf.getBool(K.warnOnClose)
+        }
+        guard !active.isEmpty else { return .terminateNow }
+        let alert = NSAlert()
+        alert.messageText = active.count == 1
+            ? "A session is still open. Quit PuTTY anyway?"
+            : "\(active.count) sessions are still open. Quit PuTTY anyway?"
+        alert.informativeText = "Quitting closes every connection."
+        alert.addButton(withTitle: "Quit")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == .alertFirstButtonReturn ? .terminateNow : .terminateCancel
+    }
+
+    /// Close every connection (and any ssh helper processes) on the way out.
+    func applicationWillTerminate(_ notification: Notification) {
+        for c in TerminalWindowController.openControllers { c.shutDown() }
+    }
+
     @objc func showConfig() {
         ConfigWindowController.presentNew()
     }

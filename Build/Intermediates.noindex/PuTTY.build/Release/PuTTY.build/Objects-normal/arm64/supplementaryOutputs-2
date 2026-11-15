@@ -1,0 +1,12 @@
+{
+  "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/PuTTY/App/AppDelegate.swift" : {
+    "abi-baseline-json" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY.abi.json",
+    "const-values" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY-primary.swiftconstvalues",
+    "dependencies" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY-primary.d",
+    "diagnostics" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY-primary.dia",
+    "objc-header" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY-Swift.h",
+    "swiftdoc" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY.swiftdoc",
+    "swiftmodule" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY.swiftmodule",
+    "swiftsourceinfo" : "/Users/egrabowski/Downloads/putty-0.85/PuTTYSwift/Build/Intermediates.noindex/PuTTY.build/Release/PuTTY.build/Objects-normal/arm64/PuTTY.swiftsourceinfo"
+  }
+}
